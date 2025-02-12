@@ -63,13 +63,13 @@ return [
             ]) : [],
         ],
 
-        'mysql5' => [
+        'billing' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST_MYSQL5', '127.0.0.1'),
-            'port' => env('DB_PORT_MYSQL5', '3306'),
-            'database' => env('DB_DATABASE_MYSQL5', 'forge'),
-            'username' => env('DB_USERNAME_MYSQL5', 'forge'),
-            'password' => env('DB_PASSWORD_MYSQL5', ''),
+            'host' => env('DB_HOST_BILLING', '127.0.0.1'),
+            'port' => env('DB_PORT_BILLING', '3306'),
+            'database' => env('DB_DATABASE_BILLING', 'forge'),
+            'username' => env('DB_USERNAME_BILLING', 'forge'),
+            'password' => env('DB_PASSWORD_BILLING', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_general_ci',
             'prefix' => '',
