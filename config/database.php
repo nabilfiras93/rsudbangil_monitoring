@@ -76,6 +76,20 @@ return [
             'strict' => false,  // MySQL 5.x may not support strict mode
             'engine' => null,
         ],
+
+        'pacs' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST_PACS', '127.0.0.1'),
+            'port' => env('DB_PORT_PACS', '3306'),
+            'database' => env('DB_DATABASE_PACS', 'forge'),
+            'username' => env('DB_USERNAME_PACS', 'forge'),
+            'password' => env('DB_PASSWORD_PACS', ''),
+            'charset' => 'utf8',
+            'collation' => 'utf8_general_ci',
+            'prefix' => '',
+            'strict' => false,  // MySQL 5.x may not support strict mode
+            'engine' => null,
+        ],
         
         'pgsql' => [
             'driver' => 'pgsql',
