@@ -57,6 +57,7 @@ mix.scripts([
 ], 'public/my-scripts-bottom-bundle.js');
 
 mix.scripts([
+    'public/build/libs/jquery/jquery-3.6.0.min.js',
     'public/build/libs/select2/select2.min.js',
     'public/build/libs/@simonwep/pickr/pickr.min.js',
     'public/build/libs/cleave.js/cleave.min.js',

@@ -1,24 +1,23 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-layout="vertical" data-layout-style="default" data-layout-position="fixed" data-topbar="light" data-sidebar="dark" data-sidebar-size="sm-hover" data-layout-width="fluid">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-layout="horizontal" data-layout-style="" data-layout-position="fixed"  data-topbar="light">
 
 <head>
     <meta charset="utf-8" />
-    <title>@yield('title')</title>
+    <title> @yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="RSUD Bangil" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ URL::asset('build/images/favicon.ico')}}">
     @include('layouts.head-css')
+    <script src="{{ URL::asset('build/libs/jquery/jquery-3.6.0.min.js') }}"></script>
 </head>
-
 <body>
 
     <!-- Begin page -->
     <div id="layout-wrapper">
-
-     @include('layouts.topbar')
-     @include('layouts.sidebar')
+        @include('layouts.topbar')
+        @include('layouts.side')
         <!-- ============================================================== -->
         <!-- Start right Content here -->
         <!-- ============================================================== -->

@@ -1,8 +1,38 @@
-@extends('layouts.master')
+@extends('layouts.layouts-horizontal-only-topbar')
 @section('title')
     Monitoring Kamar Tidur Pasien
 @endsection
 @section('content')
+    
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1">
+                            <a data-bs-toggle="collapse" href="#collapseAnggrek" role="button" aria-expanded="false" class="collapseButton"><h6 class="card-title mb-0">Ruang Anggrek</h6></a>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <ul class="list-inline card-toolbar-menu d-flex align-items-center mb-0">
+                                <li class="list-inline-item">
+                                    <a class="align-middle" href="javascript:void(0);" data-toggle="customer-loader">
+                                        <i class="mdi mdi-refresh align-middle"></i>
+                                    </a>
+                                </li>
+                                <!-- <li class="list-inline-item">
+                                    <a class="align-middle minimize-card" data-bs-toggle="collapse"
+                                        href="#collapseAnggrek" role="button" aria-expanded="false">
+                                        <i class="mdi mdi-plus align-middle plus"></i>
+                                        <i class="mdi mdi-minus align-middle minus"></i>
+                                    </a>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-xl-12">

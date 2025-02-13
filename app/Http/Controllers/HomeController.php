@@ -35,9 +35,9 @@ class HomeController extends Controller
         return abort(404);
     }
 
-    public function root()
+    public function home()
     {
-        return view('index');
+        return view('home');
     }
 
     /*Language Translation*/

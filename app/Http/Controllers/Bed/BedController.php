@@ -63,4 +63,24 @@ class BedController extends Controller
 
         return view('bed.list');
     }
+
+    public function edit(Request $request)
+    {
+        ini_set('max_execution_time', -1);
+        DB::beginTransaction();
+        try {
+            $idUnit = @$request->id_unit ?? null;
+            $kelas = @$request->kelas ?? null;
+            // $getMutasi = Siswa::getMutasi($idMutasi, $idSiswa, $temporary);
+
+            DB::commit();
+            return $this->sendSuccess('Berhasil', $getMutasi);
+        } catch (ValidationException $e){
+            DB::rollback();
+            return $this->sendError($e->getCode(), $e->validator->errors());
+        } catch (\Exception $e) {
+            DB::rollback();
+            return $this->sendError($e->getCode(), $e->getMessage());
+        }
+    }
 }
