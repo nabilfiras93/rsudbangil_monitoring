@@ -10,4 +10,5 @@ class MWLWL extends Model
     use HasFactory;
 
     protected $table = 'antrian_mwlwl';
+    
 }
