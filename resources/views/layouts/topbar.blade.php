@@ -56,7 +56,7 @@
                         </span>
                     </button>
                     
-                    @if(session()->isStarted() && session('role')!='guest')
+                    @if(Auth::check() && session('role')!='guest')
                     <div class="dropdown-menu dropdown-menu-end">
                         <a class="dropdown-item" href="pages-profile"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
                         <a class="dropdown-item " href="javascript:void();" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="bx bx-power-off font-size-16 align-middle me-1"></i> <span key="t-logout">@lang('translation.logout')</span></a>

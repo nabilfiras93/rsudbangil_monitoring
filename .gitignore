@@ -5,12 +5,9 @@ yarn-error.log
 /node_modules
 /public/hot
 /public/storage
-/storage/*.key
-/storage/logs/
-/storage/framework/
+/storage/*
 tests/
 
-storage/*.key
 .env
 Homestead.yaml
 Homestead.json
