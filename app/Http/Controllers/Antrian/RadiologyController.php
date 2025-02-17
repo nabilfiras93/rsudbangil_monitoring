@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Antrian;
 
 use App\Http\Controllers\Controller;
 use App\Models\Antrian\Doctor;
-use App\Models\MWLWL;
+use App\Models\Mwlwl;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,11 +27,11 @@ class RadiologyController extends Controller
                 ->where('antrian_mwlwl.PATIENT_LOCATION', 'Radiologi')
                 ->groupBy('antrian_patientwl.PATIENT_ID','antrian_mwlwl.ACCESSION_NO','antrian_patientwl.PATIENT_NAME', 'report_ris_2024-11-09.ID_REPORT_RIS', 'sris.ACCESSION_NO')
                 ->get();
-        // $data = MWLWL::all();
-        $jumlah = MWLWL::where('PATIENT_LOCATION', 'Radiologi')->get();
+        // $data = Mwlwl::all();
+        $jumlah = Mwlwl::where('PATIENT_LOCATION', 'Radiologi')->get();
         $doctors = Doctor::select('nama','gelar_belakang')->where('unit_ruang', 'radiologi')->limit(10)->get();
         // dd($doctors);
-        // $data = MWLWL::select('ACCESSION_NO','PATIENT_NAME')->limit(10)->get();
+        // $data = Mwlwl::select('ACCESSION_NO','PATIENT_NAME')->limit(10)->get();
         return view("antrian.pages.radiology", compact('data','doctors','jumlah'));
     }
 
@@ -51,10 +51,10 @@ class RadiologyController extends Controller
                 ->get();
                 // dd($data);
         $doctors = Doctor::select('nama','gelar_belakang')->where('unit_ruang', 'radiologi')->limit(10)->get();
-        // $data = MWLWL::select('ACCESSION_NO', 'PATIENT_NAME')->where('PATIENT_LOCATION', 'Radiologi')->get();
+        // $data = Mwlwl::select('ACCESSION_NO', 'PATIENT_NAME')->where('PATIENT_LOCATION', 'Radiologi')->get();
         return view('antrian.dashboard', compact('data','doctors'));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      */
