@@ -8,7 +8,7 @@
     <meta content="RSUD Bangil" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ URL::asset('build/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{ URL::asset('images/rsud.ico')}}">
     @include('layouts.head-css')
 </head>
 

@@ -37,7 +37,7 @@ RSUD BANGIL
                     <div class="card pricing-box ribbon-box right border card-border-danger">
                         <div class="card-body p-4">
                             <!-- <div class="ribbon-two ribbon-two-danger"><span>Popular</span></div> -->
-                            <a href="{{ url('bed/list') }}">
+                            <a href="{{ url('dashboard/bed') }}">
                                 <div class="p-4">
                                     <img src="{{ asset('images/icon/double-bed.png') }}" class="img-fluid mx-auto" />
                                 </div>
@@ -55,7 +55,7 @@ RSUD BANGIL
                     <div class="card pricing-box ribbon-box right border card-border-danger">
                         <div class="card-body p-4">
                             <!-- <div class="ribbon-two ribbon-two-danger"><span>Popular</span></div> -->
-                            <a href="{{ url('bed/list') }}">
+                            <a href="{{ url('dashboard/radiology') }}">
                                 <div class="p-4">
                                     <img src="{{ asset('images/icon/x-ray.png') }}" class="img-fluid mx-auto" />
                                 </div>
@@ -73,7 +73,7 @@ RSUD BANGIL
                     <div class="card pricing-box ribbon-box right border card-border-danger">
                         <div class="card-body p-4">
                             <!-- <div class="ribbon-two ribbon-two-danger"><span>Popular</span></div> -->
-                            <a href="{{ url('bed/list') }}">
+                            <a href="{{ url('dashboard/lab') }}">
                                 <div class="p-4">
                                     <img src="{{ asset('images/icon/double-bed.png') }}" class="img-fluid mx-auto" />
                                 </div>
