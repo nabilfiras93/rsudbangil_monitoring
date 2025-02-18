@@ -43,12 +43,13 @@ class Bed extends Model
         return $result;
     }
 
-    public static function getKunjungan($idUnit=null, $kelas=null) {
-        $getKamar = DB::connection('billing')->table('b_ms_kamar as bmk')
+    public static function getBed($idUnit=null, $kelas=null) {
+        $getBed = DB::connection('billing')->table('b_ms_kamar as bmk')
             ->leftJoin('b_ms_kamar_tarip as bmkt', 'bmk.id', '=', 'bmkt.kamar_id')
             ->leftJoin('b_ms_kelas as bmk2', 'bmk2.id', '=', 'bmkt.kelas_id')
             ->leftJoin('b_ms_unit as bmu', 'bmu.id', '=', 'bmk.unit_id')
-            ->select('bmu.nama','bmk.jumlah_tt', 'bmk2.nama as kelas');
+            ->select('bmu.nama as ruangan', 'bmk.nama as kamar',  'bmk.jumlah_tt', 'bmk2.nama as kelas')
+            ->where('bmk.aktif', 1);
         
         if($idUnit){
             if(strpos(strtolower($idUnit), ',') !== false){
@@ -57,7 +58,7 @@ class Bed extends Model
                 $idUnit = [$idUnit];
             }
             $idUnit = is_array($idUnit) ? $idUnit : [$idUnit];
-            $getKamar->where('bmk.unit_id', $idUnit);
+            $getBed->where('bmk.unit_id', $idUnit);
         }
         if($kelas){
             if(strpos(strtolower($kelas), ',') !== false){
@@ -66,9 +67,10 @@ class Bed extends Model
                 $kelas = [$kelas];
             }
             $kelas = is_array($kelas) ? $kelas : [$kelas];
-            $getKamar->where('bmkt.kelas_id', $kelas);
+            $getBed->where('bmkt.kelas_id', $kelas);
         }
-        $result = $getKamar->get();
+        $getBed->orderBy('bmu.nama')->orderBy('bmk.nama')->orderBy('bmk2.nama');
+        $result = $getBed->get();
         
         return $result;
     }
